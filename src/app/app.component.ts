@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CargarScriptsService } from "./servicios/cargar-scripts.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MablinWebsite';
+  
+  constructor( private _CargarScripts : CargarScriptsService ){
+    _CargarScripts.Carga(["main"]);
+    _CargarScripts.Carga(["swiper-bundle.min"]);
+  }
 }
